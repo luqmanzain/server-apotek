@@ -20,6 +20,8 @@ const transaksiRoutes = require("./routes/transaksi");
 app.use("/api/transaksi", transaksiRoutes);
 
 
-app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
-});
+module.exports = app;
+
+// app.listen(3001, () => {
+//   console.log("Server running on http://localhost:3001");
+// });
