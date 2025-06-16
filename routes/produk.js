@@ -15,10 +15,10 @@ router.get("/", async (req, res) => {
 
 // Add product
 router.post("/", async (req, res) => {
-  const { namaProduk, stok, hargaBeli, hargaJual } = req.body;
+  const { namaProduk, stok, hargaBeli, hargaJual, expDate } = req.body;
   try {
     const newProduk = await prisma.produk.create({
-      data: { namaProduk, stok, hargaBeli, hargaJual },
+      data: { namaProduk, stok, hargaBeli, hargaJual, expDate },
     });
     res.json(newProduk);
   } catch (error) {
@@ -29,11 +29,11 @@ router.post("/", async (req, res) => {
 // Update product
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { namaProduk, stok, hargaBeli, hargaJual } = req.body;
+  const { namaProduk, stok, hargaBeli, hargaJual, expDate } = req.body;
   try {
     const updated = await prisma.produk.update({
       where: { id: Number(id) },
-      data: { namaProduk, stok, hargaBeli, hargaJual },
+      data: { namaProduk, stok, hargaBeli, hargaJual, expDate },
     });
     res.json(updated);
   } catch (error) {

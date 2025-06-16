@@ -28,6 +28,7 @@ model Produk {
   stok       Int
   hargaBeli  Int
   hargaJual  Int
+  expDate    DateTime
 }
 
 model LaporanTransaksi {
